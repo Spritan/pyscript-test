@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+        - pandas
+        - folium
+    </py-env>
+</head>
+
+<body>
+    <h1>matplotlib</h1>
+    <div id="plot" output='plot'>
+        
+    </div>
+    <py-script>
+        import pandas as pd
+        import folium
+        from pyodide.http import open_url
+
+        location = "https://data.smartdublin.ie/dataset/33ec9fe2-4957-4e9a-ab55-c5e917c7a9ab/resource/2dec86ed-76ed-47a3-ae28-646db5c5b965/download/dublin.csv"
+        bike_station_locations = pd.read_csv(open_url(location))
+    
+    </py-script>
+
+</body>
+
+</html>
